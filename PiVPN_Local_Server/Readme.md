@@ -36,7 +36,7 @@ The port that will be listening on the device must be opened on the router confi
 
 ## Adding users and get certificates
 1. Add user: `pivpn add`
-2. Set username, password and certificate duration
+2. Set username, password and certificate duration.
 3. User certificate will be stored usually at `/home/pi/ovpns`
 4. Place certificate file on client device and connect to the VPN by using `OpenVPN connect` on Windows or Android.
 5. `sudo systemctl restart openvpn`
