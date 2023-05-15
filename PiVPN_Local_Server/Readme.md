@@ -1,6 +1,6 @@
 # PiVPN local Server
 
-PiVPN provides an installation assistant that makes easy configuration of basic OpenVPN server.
+[PiVPN](https://github.com/pivpn) provides an installation assistant that makes easy configuration of basic OpenVPN server.
 
 ## Previous steps to configure VPN
 Is strongly recommended to give an static IP address for the device which PiVPN is beeing installed. Steps to configure on basic Movistar Fiber Router:

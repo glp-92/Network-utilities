@@ -1,6 +1,6 @@
 # NGINX Stream Server on Raspbian/Ubuntu
 
-By installing an NGINX server on a Raspbian or Ubuntu SO, OBS can be linked to the server, and from the server to multiple stream platforms.
+By installing an [NGINX rtmp server](https://github.com/arut/nginx-rtmp-module) on a Raspbian or Ubuntu SO, OBS can be linked to the server, and from the server to multiple stream platforms.
 
 ## Step by step to stream on Twitch
 1. Install NGINX and RTMP mod
