@@ -42,7 +42,7 @@ The way rtmps works with NGINX is by tunelling stream before send it to the serv
     ```
     sudo nano /etc/nginx/rtmp.conf
     ```
-    Add following line
+    Add kick line
     ```
     rtmp {
         server {
@@ -92,3 +92,33 @@ The way rtmps works with NGINX is by tunelling stream before send it to the serv
     systemctl restart stunnel4.service
     systemctl restart nginx.service
     ```
+
+## Stream on Youtube
+1. On youtube account => Youtube Studio => Create => Go Live
+2. Select Streaming Software
+3. Stream Key and Stream Url are available on the Live Dashboard
+4. Modify RTMP server settings:
+    ```
+    sudo nano /etc/nginx/rtmp.conf
+    ```
+    Add youtube line
+    ```
+    rtmp {
+        server {
+            listen 1935; #Default RTMP port
+            chunk_size 4096; #Size of chunks
+
+            application live { 
+                live on; 
+                record off; 
+                #twitch
+                push rtmp://fra02.contribute.live-video.net/app/{stream_key}; #User Stream key here
+                #kick. port number must match on stunnel accept port
+                push rtmp://127.0.0.1:19353/kick/{stream_key}; #User Stream key here
+                #youtube
+                push rtmp://a.rtmp.youtube.com/live2/{stream_key};
+            }
+        }
+    }
+    ```
+5. Restart NGINX service ```sudo systemctl restart nginx.service```
