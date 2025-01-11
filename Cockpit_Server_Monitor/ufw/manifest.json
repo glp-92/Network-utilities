@@ -1,0 +1,10 @@
+{
+    "version": 0,
+    "tools": {
+        "ufw": {
+            "label": "UFW",
+            "path": "ufw.html",
+            "privileged": true
+        }
+    }
+}
